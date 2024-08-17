@@ -26,18 +26,18 @@ jobs:
         run: cargo build --release
 
       - name: Archive release
-        uses: thedoctor0/zip-release
+        uses: thedoctor0/zip-release@0.7.6
         with:
-            type: 'zip'
+            type: 'tar'
             filename: 'jankycraft-${{ runner.arch }}-${{ runner.os }}.tar.gz'
             directory: 'artifacts'
             path: 'target/release/protrader'
         if: runner.os != 'Windows'
 
       - name: Archive release (Windows)
-        uses: thedoctor0/zip-release
+        uses: thedoctor0/zip-release@0.7.6
         with:
-            type: 'tar'
+            type: 'zip'
             filename: 'jankycraft-${{ runner.arch }}-${{ runner.os }}.zip'
             directory: 'artifacts'
             path: 'target/release/protrader'
