@@ -18,10 +18,10 @@ jobs:
         components: clippy, rustfmt
 
     - name: Build
-      run: cargo build --verbose
+      run: cargo build
 
     - name: Run tests
-      run: cargo test --verbose --all-features
+      run: cargo test --all-features
 
     - name: Check formatting
       run: cargo fmt -- --check
