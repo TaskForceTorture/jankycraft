@@ -51,7 +51,7 @@ jobs:
             type: 'zip'
             filename: 'jankycraft-${{ runner.arch }}-${{ runner.os }}.zip'
             directory: 'artifacts'
-            path: 'target/release/jankycraft'
+            path: 'target/release/jankycraft.exe'
         if: runner.os == 'Windows'
 
       - name: Build Changelog
