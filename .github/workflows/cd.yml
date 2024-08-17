@@ -4,7 +4,11 @@ on:
   push:
     tags:
       - 'v*.*.*'
-      
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -28,6 +32,9 @@ jobs:
 
       - name: Build project
         run: cargo build --release
+
+      - name: Create artifacts directory
+        run: mkdir artifacts
 
       - name: Archive release
         uses: thedoctor0/zip-release@0.7.6
