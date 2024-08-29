@@ -3,6 +3,14 @@ name = "jankycraft"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "engine"
+path = "Engine/lib.rs"
+
+[[bin]]
+name = "jankycraft"
+path = "Game/main.rs"
+
 [dependencies]
 env_logger = "0.11.5"
 log = "0.4.22"
