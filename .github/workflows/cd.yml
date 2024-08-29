@@ -42,7 +42,7 @@ jobs:
             type: 'tar'
             filename: 'jankycraft-${{ runner.arch }}-${{ runner.os }}.tar.gz'
             directory: 'artifacts'
-            path: 'target/release/jankycraft'
+            path: '../target/release/jankycraft'
         if: runner.os != 'Windows'
 
       - name: Archive release (Windows)
@@ -51,7 +51,7 @@ jobs:
             type: 'zip'
             filename: 'jankycraft-${{ runner.arch }}-${{ runner.os }}.zip'
             directory: 'artifacts'
-            path: 'target/release/jankycraft.exe'
+            path: '../target/release/jankycraft.exe'
         if: runner.os == 'Windows'
 
       - name: Build Changelog
