@@ -1,0 +1,23 @@
+name: CI
+
+on:
+    push:
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CARGO_TERM_COLOR: always
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: taiki-e/checkout-action@v1
+            - name: Test project
+              run: cargo test --all-features
